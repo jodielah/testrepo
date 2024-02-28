@@ -50,8 +50,10 @@ cd $targetDirectory # <- then move to target directory
 
 # [TASK 8]
 # Declare constant for number of seconds in 24 hours (84600)
-declare -r seconds_in_24Hours=$((24 * 60 * 60))
-yesterdayTS=$(($currentTS - $seconds_in_24Hours))
+#declare -r seconds_in_24Hours=$((24 * 60 * 60))
+#yesterdayTS=$(($currentTS - $seconds_in_24Hours))
+# or you could use yesterday keyword and get the seconds
+yesterdayTS=$(date -d "yesterday" +%s)
 
 # Declare new array and loop through all files
 #  and add those modified in the last 24 hours
